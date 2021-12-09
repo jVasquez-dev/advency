@@ -5,25 +5,114 @@
 }
 
 body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     width: 100vw;
+    background-image: url("https://i.ibb.co/BCHMgTd/Pngtree-glass-of-cat-pattern-christmas-3718499.png");
 }
 
 .container{
     margin: auto;
-    margin-top: 25px;
-    width: 80%;
+    width: 750px;
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    
+    /* align-items: center; */
+    border-radius: 25px;
 }
 
 .add-gift{
-    background: chartreuse;
+    padding: 3px;
+    background: rgba(255, 0, 0, 0.9);
     text-align: center;
     width: 50%;
+    color: white;
 }
 
 .list-gifts {
     width: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    padding: 3px;
+    text-align: center;
+}
+
+.title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.input-wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    width: 100%;
+}
+
+.input-name {
+    width: 80%;
+    margin-right: 5px;
+    padding: 2px;
+}
+
+.input-qty{
+    width: 12%;
+    padding: 2px;
+    text-align: center;
+}
+
+.addButton {
+    margin-bottom: 25px;
+    margin-top: 25px;
+    width: 60%;
+    padding: 3px;
+    border: none;
+    background: white;
+    border: solid 2px rgb(8, 168, 8);
+    color:  rgb(8, 168, 8);
+    cursor: pointer;
+}
+
+.deleteButton {
+    margin-bottom: 25px;
+    margin-top: 0px;
+    width: 60%;
+    padding: 3px;
+    border: none;
+    background: white;
+    border: solid 2px red;
+    color:  red;
+    text-align: center;
+    cursor: pointer;
+}
+
+.list-element .deleteButton {
+    margin: 0;
+    width: auto;
+}
+
+.list-element {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 4px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-wrapper {
+    width: 35%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+ul {
+    list-style-type: none;
+    max-height: 300px;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
