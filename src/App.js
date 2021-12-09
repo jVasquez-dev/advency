@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import './assets/styles.css'
 
-function App() {
+import { AddGift } from "./components/AddGift";
+import { ListGifts } from "./components/ListGifts";
+
+export default function App() {
+
+    const [gifts, setGifts] = useState([])
+    
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+        <AddGift gifts = {gifts} setGift = {setGifts}/>
+        <ListGifts />
     </div>
   );
 }
-
-export default App;
