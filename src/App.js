@@ -7,7 +7,6 @@ import { ListGifts } from "./components/ListGifts";
 export default function App() {
 
     let lista = localStorage.getItem('lista')
-    console.log(lista)
     if(lista) {
         lista = JSON.parse(lista);
     }
@@ -16,7 +15,6 @@ export default function App() {
 
     const [gifts, setGifts] = useState(initState)
     
-
   return (
     <div className="container">
         <AddGift gifts = {gifts} setGifts = {setGifts}/>

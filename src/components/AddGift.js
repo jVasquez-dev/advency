@@ -4,10 +4,11 @@ export const AddGift = ({gifts, setGifts}) => {
 
       const [values, setValues] = useState({
         giftName: '',
-        giftQty: ''
+        giftQty: '',
+        giftURL:''
     })
 
-    const {giftName, giftQty} = values
+    const {giftName, giftQty, giftURL} = values
 
     const [isDuplicated, setIsDuplicated] = useState()
 
@@ -23,18 +24,24 @@ export const AddGift = ({gifts, setGifts}) => {
             return
         }
 
-       const duplicated = (gifts.filter( (gift) => 
-        gift.gift == newGift
+        const duplicated = (gifts.filter( (gift) => 
+        gift.gift === newGift
         ).length > 0)
 
-    //    setIsDuplicated(duplicated)
+        console.log(typeof(e.target.giftURL.value) )
     
         if(duplicated){
             setIsDuplicated(true)
+            setValues({giftName: '',
+            giftQty: '',
+            giftURL:''})
         }else {
             setIsDuplicated(false)
-            setGifts([...gifts, {gift: newGift, qty: e.target.giftQty.value || 1}])
-            localStorage.setItem('lista', JSON.stringify([...gifts, {gift: newGift, qty: e.target.giftQty.value || 1}]));
+            setGifts([...gifts, {gift: newGift, qty: e.target.giftQty.value || 1, url: e.target.giftURL.value || ''}])
+            localStorage.setItem('lista', JSON.stringify([...gifts, {gift: newGift, qty: e.target.giftQty.value || 1, url: e.target.giftURL.value || ''}]));
+            setValues({giftName: '',
+            giftQty: '',
+            giftURL:''})
         }
         
     }
@@ -57,6 +64,14 @@ export const AddGift = ({gifts, setGifts}) => {
                     name='giftName' 
                     value={giftName}
                     className='input-name'
+                />
+                 <input
+                    type="text" 
+                    placeholder="Agrega imagen del regalo"
+                    onChange={ handleInputChange }
+                    name='giftURL' 
+                    value={giftURL}
+                    className='input-URL'
                 />
                 <input 
                     type="number" 

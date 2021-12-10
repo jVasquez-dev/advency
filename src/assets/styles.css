@@ -15,7 +15,8 @@ body{
 
 .container{
     margin: auto;
-    width: 750px;
+    width: 800px;
+    min-height: 400px;
     display: flex;
     justify-content: space-around;
     /* align-items: center; */
@@ -115,4 +116,11 @@ ul {
     padding: 0;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+.small {
+    height: 50px;
+    width: 75px;
+    border: 1px solid green;
+    cursor: pointer;
 }
