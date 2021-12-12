@@ -24,19 +24,22 @@ body{
 }
 
 .add-gift{
-    padding: 3px;
-    background: rgba(255, 0, 0, 0.9);
+    
+    margin-top: 10px;
+    background: white;
     text-align: center;
-    width: 50%;
-    color: white;
+    width: 100%;
+    color: black;
 }
 
 .list-gifts {
     width: 50%;
-    background: rgba(255, 255, 255, 0.9);
+    background: white;
     color: black;
     padding: 3px;
     text-align: center;
+    border-radius: 15px;
+    position: relative;
 }
 
 .title {
@@ -86,6 +89,7 @@ body{
     color:  red;
     text-align: center;
     cursor: pointer;
+    
 }
 
 .list-element .deleteButton {
@@ -123,4 +127,11 @@ ul {
     width: 75px;
     border: 1px solid green;
     cursor: pointer;
+}
+
+#delete-all{
+    position: absolute;
+    top: 85%;
+    right: 50%;
+    transform: translate(50%);
 }

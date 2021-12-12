@@ -46,11 +46,6 @@ export const AddGift = ({gifts, setGifts}) => {
         
     }
 
-    const handleDelete = () => {
-        setGifts([])
-        localStorage.setItem('lista', [])
-    }
-
     return (
         
         <div className='add-gift'>
@@ -90,7 +85,7 @@ export const AddGift = ({gifts, setGifts}) => {
                     AÑADIR REGALO
                 </button>
             </form>
-            <button className='deleteButton' onClick={ handleDelete }>ELIMINAR TODOS</button>
+            
          
         </div>
     )
