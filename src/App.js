@@ -9,14 +9,14 @@ export default function App() {
     if(lista) {
         lista = JSON.parse(lista);
     }
-
     const initState = lista || []
 
     const [gifts, setGifts] = useState(initState)
+    const [active, setActive] = useState({index: "", gift: ""})
     
   return (
     <div className="container">
-        <ListGifts  gifts = {gifts} setGifts = {setGifts} />
+        <ListGifts  gifts = {gifts} setGifts = {setGifts} active = {active} setActive={setActive} />
     </div>
   );
 }

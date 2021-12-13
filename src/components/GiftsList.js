@@ -1,8 +1,6 @@
 import React from 'react'
 
-export const GiftsList = ({gifts, setGifts}) => {
-
-    const show = false
+export const GiftsList = ({gifts, setGifts, setOpenModal, active, setActive}) => {
 
     const handleDeleteItem = e => {
         setGifts(gifts.filter( (gift, index) => index != e.target.name ))
@@ -10,8 +8,7 @@ export const GiftsList = ({gifts, setGifts}) => {
     }
 
     return (
-        <div>
-            
+        <> 
             <ul className='list-wrapper'>
                     {gifts.map( (gift, index) => (
                         <li key={index} className='list-element'>
@@ -23,6 +20,14 @@ export const GiftsList = ({gifts, setGifts}) => {
                             <div className='delete-wrapper'>
                                 <p>{gift.qty}</p>
                                 <button 
+                                    className='editButton' 
+                                    onClick={ () => {
+                                        setOpenModal(true);
+                                        setActive({index: index, gift: gift})
+                                    } }>
+                                    Editar
+                                </button>
+                                <button 
                                     className='deleteButton' 
                                     name={index} onClick={ handleDeleteItem }>
                                     X
@@ -30,8 +35,7 @@ export const GiftsList = ({gifts, setGifts}) => {
                             </div>  
                         </li>
                     ))}
-                
             </ul>
-        </div>
+        </>
     )
 }
