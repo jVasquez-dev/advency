@@ -16,7 +16,10 @@ export const GiftsList = ({gifts, setGifts}) => {
                     {gifts.map( (gift, index) => (
                         <li key={index} className='list-element'>
                             { gift.url &&  <img className='small' src={gift.url} /> }
-                            <p>{gift.gift}</p>
+                            <div className=''>
+                                <p>{gift.gift}</p>
+                                <p className='description-wrapper'>{gift.owner}</p>
+                            </div>
                             <div className='delete-wrapper'>
                                 <p>{gift.qty}</p>
                                 <button 

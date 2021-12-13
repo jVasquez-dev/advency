@@ -51,17 +51,18 @@ body{
     padding-left: 10px;
     padding-right: 10px;
     display: flex;
+    flex-direction: column;
     width: 100%;
 }
 
 .input-name {
     width: 80%;
-    margin-right: 5px;
+    margin-bottom: 15px;
     padding: 2px;
 }
 
 .input-qty{
-    width: 12%;
+    width: 25%;
     padding: 2px;
     text-align: center;
 }
@@ -124,7 +125,7 @@ ul {
 
 .small {
     height: 50px;
-    width: 75px;
+    width: 50px;
     border: 1px solid green;
     cursor: pointer;
 }
@@ -134,4 +135,10 @@ ul {
     top: 85%;
     right: 50%;
     transform: translate(50%);
+}
+
+.description-wrapper {
+    color: gray;
+    font-style: italic;
+    text-align: start;
 }

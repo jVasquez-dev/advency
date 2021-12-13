@@ -15,7 +15,7 @@ export const Modal = ({setOpenModal, gifts, setGifts}) => {
                     </button>
                     
                 </div>
-                <AddGift gifts={gifts} setGifts={setGifts} />
+                <AddGift gifts={gifts} setGifts={setGifts} setOpenModal={setOpenModal} />
             </div>
         </div>
     )

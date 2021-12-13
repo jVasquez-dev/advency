@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 
-export const AddGift = ({gifts, setGifts}) => {
+export const AddGift = ({gifts, setGifts, setOpenModal}) => {
 
       const [values, setValues] = useState({
         giftName: '',
         giftQty: '',
-        giftURL:''
+        giftURL:'',
+        giftOwner: ''
     })
 
-    const {giftName, giftQty, giftURL} = values
+    const {giftName, giftQty, giftURL, giftOwner} = values
 
     const [isDuplicated, setIsDuplicated] = useState()
 
@@ -37,11 +38,13 @@ export const AddGift = ({gifts, setGifts}) => {
             giftURL:''})
         }else {
             setIsDuplicated(false)
-            setGifts([...gifts, {gift: newGift, qty: e.target.giftQty.value || 1, url: e.target.giftURL.value || ''}])
+            setGifts([...gifts, {gift: newGift, qty: e.target.giftQty.value || 1, url: e.target.giftURL.value || '', owner: e.target.giftOwner.value}])
             localStorage.setItem('lista', JSON.stringify([...gifts, {gift: newGift, qty: e.target.giftQty.value || 1, url: e.target.giftURL.value || ''}]));
             setValues({giftName: '',
             giftQty: '',
-            giftURL:''})
+            giftURL:'',
+            giftOwner:''})
+            setOpenModal(false)
         }
         
     }
@@ -66,10 +69,19 @@ export const AddGift = ({gifts, setGifts}) => {
                     onChange={ handleInputChange }
                     name='giftURL' 
                     value={giftURL}
-                    className='input-URL'
+                    className='input-name'
+                />
+                 <input
+                    type="text" 
+                    placeholder="Para quien es el regalo"
+                    onChange={ handleInputChange }
+                    name='giftOwner' 
+                    value={giftOwner}
+                    className='input-name'
                 />
                 <input 
-                    type="number" 
+                    type="number"
+                    placeholder='cantidad' 
                     min="1" 
                     onChange={handleInputChange}
                     name='giftQty'
