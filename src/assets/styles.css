@@ -79,6 +79,10 @@ body{
     cursor: pointer;
 }
 
+.addButton:focus {
+    text-decoration: underline rgb(8, 168, 8);
+}
+
 .deleteButton {
     margin-bottom: 25px;
     margin-top: 0px;
@@ -91,6 +95,10 @@ body{
     text-align: center;
     cursor: pointer;
     
+}
+
+.deleteButton:focus {
+    text-decoration: underline red;
 }
 
 .list-element .deleteButton {
@@ -140,10 +148,14 @@ body{
     padding: 3px;
     border: none;
     background: white;
-    border: solid 2px green;
-    color:  green;
+    border: solid 2px rgb(8, 168, 8);
+    color: rgb(8, 168, 8);
     text-align: center;
     cursor: pointer;
+}
+
+.editButton:focus {
+    text-decoration: underline rgb(8, 168, 8);
 }
 
 .description-wrapper {

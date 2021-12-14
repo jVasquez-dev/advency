@@ -3,8 +3,8 @@ import React from 'react'
 export const GiftsList = ({gifts, setGifts, setOpenModal, active, setActive}) => {
 
     const handleDeleteItem = e => {
-        setGifts(gifts.filter( (gift, index) => index != e.target.name ))
-        localStorage.setItem('lista', JSON.stringify(gifts.filter( (gift, index) => index != e.target.name )))
+        setGifts(gifts.filter( (gift, index) => index !== parseInt(e.target.name) ))
+        localStorage.setItem('lista', JSON.stringify(gifts.filter( (gift, index) => index !== parseInt(e.target.name) )))
     }
 
     return (
@@ -12,7 +12,7 @@ export const GiftsList = ({gifts, setGifts, setOpenModal, active, setActive}) =>
             <ul className='list-wrapper'>
                     {gifts.map( (gift, index) => (
                         <li key={index} className='list-element'>
-                            { gift.url &&  <img className='small' src={gift.url} /> }
+                            { gift.url &&  <img alt='gift' className='small' src={gift.url} /> }
                             <div className=''>
                                 <p>{gift.gift}</p>
                                 <p className='description-wrapper'>{gift.owner}</p>

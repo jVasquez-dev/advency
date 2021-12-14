@@ -60,6 +60,7 @@ export const AddGift = ({ gifts, setGifts, setOpenModal, active, setActive }) =>
                         name='giftName'
                         value={giftName}
                         className='input-name'
+                        autoFocus
                     />
                     <input
                         type="text"

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react/cjs/react.development'
+import { useState} from 'react/cjs/react.development'
 import { GiftsList } from './GiftsList'
 import { Modal } from './Modal'
 import { NoGifts } from './NoGifts'
@@ -7,12 +7,15 @@ import { NoGifts } from './NoGifts'
 
 export const ListGifts = ({ gifts, setGifts , active, setActive}) => {
 
+   
+
     const [modalOpen, setModalOpen] = useState(false);
 
     const handleDelete = () => {
         setGifts([])
         localStorage.setItem('lista', [])
     }
+
 
     return (
         <>
@@ -30,6 +33,7 @@ export const ListGifts = ({ gifts, setGifts , active, setActive}) => {
             <h1 className='title'>Lista de Regalos</h1>
             <button
                 className="addButton"
+                autoFocus
                 onClick={() => {
                     setModalOpen(true);
                 }}
