@@ -4,7 +4,6 @@ export const GiftsList = ({gifts, setGifts, setOpenModal, active, setActive}) =>
 
     const handleDeleteItem = e => {
         setGifts(gifts.filter( (gift, index) => index !== parseInt(e.target.name) ))
-        localStorage.setItem('lista', JSON.stringify(gifts.filter( (gift, index) => index !== parseInt(e.target.name) )))
     }
 
     return (

@@ -37,7 +37,6 @@ export const AddGift = ({ gifts, setGifts, setOpenModal, active, setActive }) =>
 
         setGifts(newGifts)
 
-        localStorage.setItem('lista', JSON.stringify(newGifts));
         setValues({
             giftName: '',
             giftQty: '',

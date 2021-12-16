@@ -7,15 +7,11 @@ import { NoGifts } from './NoGifts'
 
 export const ListGifts = ({ gifts, setGifts , active, setActive}) => {
 
-   
-
     const [modalOpen, setModalOpen] = useState(false);
 
     const handleDelete = () => {
         setGifts([])
-        localStorage.setItem('lista', [])
     }
-
 
     return (
         <>
@@ -30,18 +26,18 @@ export const ListGifts = ({ gifts, setGifts , active, setActive}) => {
                 />
             }
             <div className='list-gifts'>
-            <h1 className='title'>Lista de Regalos</h1>
-            <button
-                className="addButton"
-                autoFocus
-                onClick={() => {
-                    setModalOpen(true);
-                }}
-            >
-                AGREGAR REGALO
-            </button>
-            {gifts.length > 0 ? <GiftsList gifts={gifts} setGifts={setGifts} setOpenModal={setModalOpen} active = {active} setActive={setActive}   /> : <NoGifts />}
-            <button id='delete-all' className='deleteButton' onClick={ handleDelete }>ELIMINAR TODOS</button>
+                <h1 className='title'>Lista de Regalos</h1>
+                <button
+                    className="addButton"
+                    autoFocus
+                    onClick={() => {
+                        setModalOpen(true);
+                    }}
+                >
+                    AGREGAR REGALO
+                </button>
+                {gifts.length > 0 ? <GiftsList gifts={gifts} setGifts={setGifts} setOpenModal={setModalOpen} active = {active} setActive={setActive}   /> : <NoGifts />}
+                <button id='delete-all' className='deleteButton' onClick={ handleDelete }>ELIMINAR TODOS</button>
             </div>
         </>
         
