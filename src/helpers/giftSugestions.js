@@ -1,0 +1,1 @@
+export const giftSugentions = ['medias', 'vino', 'viaje', 'libro', 'Nintendo Switch', 'iPhone 13']

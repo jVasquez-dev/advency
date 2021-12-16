@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { giftSugentions } from '../helpers/giftSugestions'
 
 export const AddGift = ({ gifts, setGifts, setOpenModal, active, setActive }) => {
 
@@ -18,6 +19,12 @@ export const AddGift = ({ gifts, setGifts, setOpenModal, active, setActive }) =>
 
     const handleInputChange = ({ target }) => {
         setValues({ ...values, [target.name]: target.value })
+    }
+
+    const handleCreateRandom = (e) => {
+        e.preventDefault()
+        const sugestion = Math.floor(Math.random() * (giftSugentions.length))
+        setValues({ ...values, giftName: giftSugentions[sugestion] })
     }
 
     const handleSubmit = e => {
@@ -52,15 +59,21 @@ export const AddGift = ({ gifts, setGifts, setOpenModal, active, setActive }) =>
             <h1 className='title'>¡Agrega regalos a tu lista navideña!</h1>
             <form onSubmit={handleSubmit}>
                 <div className='input-wrapper'>
-                    <input
-                        type="text"
-                        placeholder="Agrega un regalo aqui"
-                        onChange={handleInputChange}
-                        name='giftName'
-                        value={giftName}
-                        className='input-name'
-                        autoFocus
-                    />
+                    <div className='name-wrapper'>
+                        <input
+                            type="text"
+                            placeholder="Agrega un regalo aqui"
+                            onChange={handleInputChange}
+                            name='giftName'
+                            value={giftName}
+                            className=''
+                            autoFocus
+                            className='input-name-small'
+                        />
+                        <button onClick={handleCreateRandom} className='addButton-small' >
+                            Sorprendeme
+                        </button>
+                    </div>
                     <input
                         type="text"
                         placeholder="Agrega imagen del regalo"

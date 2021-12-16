@@ -61,6 +61,11 @@ body{
     padding: 2px;
 }
 
+.input-name-small {
+    padding: 2px;
+    width: 65%;
+}
+
 .input-qty{
     width: 25%;
     padding: 2px;
@@ -71,6 +76,16 @@ body{
     margin-bottom: 15px;
     margin-top: 15px;
     width: 60%;
+    padding: 3px;
+    border: none;
+    background: white;
+    border: solid 2px rgb(8, 168, 8);
+    color:  rgb(8, 168, 8);
+    cursor: pointer;
+}
+
+.addButton-small {
+    width: 30%;
     padding: 3px;
     border: none;
     background: white;
@@ -175,4 +190,12 @@ body{
     display: flex; 
     align-items: center;
     justify-content: center;
+}
+
+.name-wrapper {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
 }
