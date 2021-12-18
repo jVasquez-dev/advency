@@ -8,14 +8,15 @@ export const AddGift = ({ gifts, setGifts, setOpenModal, active, setActive }) =>
         giftName: gift.gift || '',
         giftQty: gift.qty || '',
         giftURL: gift.url || '',
-        giftOwner: gift.owner || ''
+        giftOwner: gift.owner || '',
+        giftPrice: gift.price || ''
     }
 
     let newGifts
 
     const [values, setValues] = useState(initState)
 
-    const { giftName, giftQty, giftURL, giftOwner } = values
+    const { giftName, giftQty, giftURL, giftOwner, giftPrice } = values
 
     const handleInputChange = ({ target }) => {
         setValues({ ...values, [target.name]: target.value })
@@ -28,8 +29,9 @@ export const AddGift = ({ gifts, setGifts, setOpenModal, active, setActive }) =>
     }
 
     const handleSubmit = e => {
+        console.log(e.target.giftPrice)
         e.preventDefault()
-        const { giftName, giftQty, giftURL, giftOwner } = e.target
+        const { giftName, giftQty, giftURL, giftOwner, giftPrice } = e.target
 
         if (!giftName.value.trim()) {
             return
@@ -37,9 +39,9 @@ export const AddGift = ({ gifts, setGifts, setOpenModal, active, setActive }) =>
 
         if (typeof (index) === 'number') {
             newGifts = [...gifts]
-            newGifts[index] = { gift: giftName.value, qty: giftQty.value || 1, url: giftURL.value || '', owner: giftOwner.value }
+            newGifts[index] = { gift: giftName.value, qty: giftQty.value || 1, url: giftURL.value || '', owner: giftOwner.value, price: giftPrice.value }
         } else {
-            newGifts = [...gifts, { gift: giftName.value, qty: giftQty.value || 1, url: giftURL.value || '', owner: giftOwner.value }]
+            newGifts = [...gifts, { gift: giftName.value, qty: giftQty.value || 1, url: giftURL.value || '', owner: giftOwner.value, price: giftPrice.value  }]
         }
 
         setGifts(newGifts)
@@ -48,7 +50,8 @@ export const AddGift = ({ gifts, setGifts, setOpenModal, active, setActive }) =>
             giftName: '',
             giftQty: '',
             giftURL: '',
-            giftOwner: ''
+            giftOwner: '',
+            giftPrice: ''
         })
         setActive({ index: "", gift: "" })
         setOpenModal(false)
@@ -66,7 +69,6 @@ export const AddGift = ({ gifts, setGifts, setOpenModal, active, setActive }) =>
                             onChange={handleInputChange}
                             name='giftName'
                             value={giftName}
-                            className=''
                             autoFocus
                             className='input-name-small'
                         />
@@ -97,6 +99,15 @@ export const AddGift = ({ gifts, setGifts, setOpenModal, active, setActive }) =>
                         onChange={handleInputChange}
                         name='giftQty'
                         value={giftQty}
+                        className='input-qty'
+                    />
+                    <input
+                        type="number"
+                        placeholder='precio($)'
+                        min="0"
+                        onChange={handleInputChange}
+                        name='giftPrice'
+                        value={giftPrice}
                         className='input-qty'
                     />
                 </div>

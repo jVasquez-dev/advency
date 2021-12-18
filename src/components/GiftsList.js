@@ -13,11 +13,11 @@ export const GiftsList = ({gifts, setGifts, setOpenModal, active, setActive}) =>
                         <li key={index} className='list-element'>
                             { gift.url &&  <img alt='gift' className='small' src={gift.url} /> }
                             <div className=''>
-                                <p>{gift.gift}</p>
+                                <p>{`${gift.gift} x (${gift.qty})`}</p>
                                 <p className='description-wrapper'>{gift.owner}</p>
                             </div>
                             <div className='delete-wrapper'>
-                                <p>{gift.qty}</p>
+                                <p>{gift.qty ? '$' +  gift.qty * gift.price : ''}</p>
                                 <button 
                                     className='editButton' 
                                     onClick={ () => {
