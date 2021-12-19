@@ -13,6 +13,14 @@ export const ListGifts = ({ gifts, setGifts , active, setActive}) => {
         setGifts([])
     }
 
+    const handleTotal = () => {
+        const reducer = (acum, current) => {
+            return acum + current.qty * current.price
+        }
+        const sum = gifts.reduce(reducer, 0)
+        return sum
+    }
+
     return (
         <>
             { 
@@ -37,6 +45,11 @@ export const ListGifts = ({ gifts, setGifts , active, setActive}) => {
                     AGREGAR REGALO
                 </button>
                 {gifts.length > 0 ? <GiftsList gifts={gifts} setGifts={setGifts} setOpenModal={setModalOpen} active = {active} setActive={setActive}   /> : <NoGifts />}
+                <div className='cartWrapper'>
+                <p className='cartTotal'>Total ${handleTotal()}</p>
+                </div>
+                
+
                 <button id='delete-all' className='deleteButton' onClick={ handleDelete }>ELIMINAR TODOS</button>
             </div>
         </>

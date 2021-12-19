@@ -200,3 +200,15 @@ body{
     align-items: center;
     margin-bottom: 15px;
 }
+
+.cartTotal {
+    background: gray;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    width: 60%;
+}
+
+.cartWrapper {
+    display: flex;
+    justify-content: center;
+}
