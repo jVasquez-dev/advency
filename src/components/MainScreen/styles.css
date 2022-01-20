@@ -1,0 +1,100 @@
+.bottom-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100px;
+    align-items: center;
+    width: 45%;
+}
+
+.cart-wrapper {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    padding: 15px 0;
+    width: 45%;
+}
+
+.content-main {
+    background: rgba(0,69,199,0.26);
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: -2px 2px 4px blue;
+    padding: 4px;
+}
+
+.content-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid blue;
+}
+
+.content-body {
+    background: rgba(255, 255, 255, 0.5);
+    margin: 10px 0;
+    height: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 5px 3px 5px 3px;
+}
+
+.button-danger {
+    border: 3px solid red;
+    transition-duration: 0.04s;
+}
+
+.button-danger:hover, .button-danger:focus{
+    background-color: red;
+    /* border: 3px solid white; */
+    color: white;
+    outline: none;
+}
+
+.button-success {
+    border: 3px solid #4CAF50;
+    transition-duration: 0.04s;
+}
+
+.button-success:hover, .button-success:focus{
+    background-color: #4CAF50;
+    /* border: 3px solid white; */
+    color: white;
+    outline: none;
+}
+
+.m-2 {
+    margin: 2px;
+}
+
+@media only screen and (max-width: 576px) {
+    .content-header {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,50 @@
+.button {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 5px 3px 5px 3px;
+}
+
+.button-success {
+    border: 3px solid #4CAF50;
+    transition-duration: 0.04s;
+}
+
+.button-success:hover, .button-success:focus{
+    background-color: #4CAF50;
+    /* border: 3px solid white; */
+    color: white;
+    outline: none;
+}
+
+.field-wrapper {
+    display: block;
+    margin: 5px 0px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-large {
+    display: block;
+    margin: 5px 0px;
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+    margin: 5px 0px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-200 {
+    width: 200px;
+}

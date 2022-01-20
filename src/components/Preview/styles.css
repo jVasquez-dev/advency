@@ -1,0 +1,30 @@
+.container-preview {
+    margin: 0px 0px 20px 0px;
+    height: 360px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.image-wrapper {
+    width: 25%;
+}
+
+.list-element {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+}
+
+@media print {
+
+    .container-preview {
+        width: 100%;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        height: 100%;
+        -webkit-print-color-adjust: exact;
+    }
+    
+}

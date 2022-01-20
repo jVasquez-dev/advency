@@ -1,33 +1,41 @@
-import { useState } from 'react';
-import './assets/styles.css'
-import './assets/modal.css'
-import { ListGifts } from "./components/ListGifts"
+import { useState, useEffect } from 'react'
+
+import { MainScreen } from './components/MainScreen'
 import { api } from './helpers/api';
-import { useEffect } from 'react/cjs/react.development';
-import { Loading } from './components/Loading'
+
+import 'normalize.css'
+import './styles.css'
 
 export default function App() {
 
   const [gifts, setGifts] = useState([])
-  const [active, setActive] = useState({index: "", gift: ""})
+  const [active, setActive] = useState({ index: "", gift: "", duplicate: false, list: false })
   const [isLoading, setIsLoading] = useState(true)
 
-    useEffect(() => {
-      api.gifts()
-        .then(gifts => setGifts(gifts.data))
-        .catch(console.log)
-        .finally(() => setIsLoading(false))
-    }, [])
-
-    useEffect(() => {
-      api.save(gifts)
-      .then(console.log).catch(console.log)
+  useEffect(() => {
+    api.gifts()
+      .then(gifts => setGifts(gifts.data))
       .catch(console.log)
-    }, [gifts]);
-    
+      .finally(() => setIsLoading(false))
+  }, [])
+
+  useEffect(() => {
+    api.save(gifts)
+      .then(console.log)
+      .catch(console.log)
+  }, [gifts]);
+  
+
   return (
-    <div className="container">
-        { isLoading ? <Loading /> : <ListGifts  gifts = {gifts} setGifts = {setGifts} active = {active} setActive={setActive} />} 
+    <div className='container'>
+      <MainScreen
+        isLoading={isLoading}
+        gifts={gifts}
+        setGifts={setGifts}
+        active={active}
+        setActive={setActive}
+      />
     </div>
+
   );
 }

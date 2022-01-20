@@ -1,7 +1,7 @@
 export const api = {
     gifts: () => new Promise((resolve, reject) => {
         try {
-            const list = localStorage.getItem('lista')
+            const list = localStorage.getItem('giftList')
             setTimeout(
                 () => resolve({
                     status: 'ok',
@@ -18,10 +18,10 @@ export const api = {
     }),
     save: (data) => new Promise((resolve, reject) => {
         try {
-            localStorage.setItem('lista', JSON.stringify(data))
-            resolve('guardado')
+            localStorage.setItem('giftList', JSON.stringify(data))
+            resolve('saved')
         } catch (error) {
-            reject('error al guardar')
+            reject('error: data cannot be saved')
         }
     })
 }
